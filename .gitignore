@@ -1,0 +1,19 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Production build
+dist
+dist-ssr
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.development
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+*.log

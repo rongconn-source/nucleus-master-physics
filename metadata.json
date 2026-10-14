@@ -1,0 +1,6 @@
+{
+  "name": "Vật lý Hạt nhân & Phóng xạ 12",
+  "description": "Ứng dụng học tập và mô phỏng tương tác toàn diện chuyên đề Vật lý Hạt nhân & Phóng xạ lớp 12 theo chương trình GDPT mới.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
