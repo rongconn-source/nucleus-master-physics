@@ -30,7 +30,7 @@ export const THEORY_TOPICS: TheoryTopic[] = [
     title: 'Cấu trúc Hạt nhân & Kí hiệu Hạt nhân',
     subtitle: 'Nucleon, số khối, đồng vị, kích thước hạt nhân, khối lượng nguyên tử amu và thí nghiệm Rutherford',
     summaryPoints: [
-      'Hạt nhân nguyên tử tích điện dương $+Ze$, được cấu tạo từ hai loại hạt gọi chung là nucleon: Proton ($p$, mang điện tích $+e \approx +1,6 \\cdot 10^{-19}\\text{ C}$, khối lượng $m_p \\approx 1,00728\\text{ amu}$) và Neutron ($n$, không mang điện, khối lượng $m_n \\approx 1,00866\\text{ amu}$).',
+      'Hạt nhân nguyên tử tích điện dương $+Ze$, được cấu tạo từ hai loại hạt gọi chung là nucleon: Proton ($p$, mang điện tích $+e \\approx +1,6 \\cdot 10^{-19}\\text{ C}$, khối lượng $m_p \\approx 1,00728\\text{ amu}$) và Neutron ($n$, không mang điện, khối lượng $m_n \\approx 1,00866\\text{ amu}$).',
       'Kí hiệu hạt nhân: ${}^{A}_{Z}\\text{X}$, trong đó $Z$ là nguyên tử số (số proton = số thứ tự trong bảng tuần hoàn), $A$ là số khối (tổng số nucleon: $A = Z + N$). Số neutron trong hạt nhân là $N = A - Z$.',
       'Hạt quark: Hạt nucleon vẫn chưa phải là hạt nhỏ nhất, còn có các hạt nhỏ bé hơn cấu tạo nên các nucleon gọi là hạt quark (theo đúng tài liệu Chủ đề 1).',
       'Thí nghiệm tán xạ Rutherford (1911): Bắn chùm hạt $\\alpha$ vào lá vàng mỏng (độ dày chỉ khoảng $4 \\cdot 10^{-7}\\text{ m} = 400\\text{ nm}$). Phần lớn hạt $\\alpha$ đi thẳng, chỉ khoảng $1/10^4$ hạt bị tán xạ góc lớn hơn $90^\\circ$, chứng minh nguyên tử phần lớn là rỗng và hạt nhân mang điện dương tập trung ở tâm cực nhỏ.',
