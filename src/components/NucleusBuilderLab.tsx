@@ -531,7 +531,7 @@ export const NucleusBuilderLab: React.FC = () => {
         ctx.fill();
         ctx.stroke();
 
-        ctx.font = `600 ${fontSize}px "Plus Jakarta Sans", sans-serif`;
+        ctx.font = `600 ${fontSize}px "Be Vietnam Pro", sans-serif`;
         const textWidth = ctx.measureText(labelText).width;
         const spheresWidth = 38; // 3 overlapping spheres
         const gapBetween = 10;
