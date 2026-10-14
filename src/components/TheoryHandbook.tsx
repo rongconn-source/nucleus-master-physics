@@ -158,25 +158,25 @@ export const TheoryHandbook: React.FC = () => {
       {/* RIGHT CONTENT AREA: Detailed Theory, KaTeX Formulas & Exam Traps Table (8 cols) */}
       <div className="lg:col-span-8 min-w-0 space-y-6">
         {/* Topic Header Card */}
-        <div className="bg-[#111C30] border border-slate-800 rounded-2xl p-5 sm:p-6 space-y-5">
-          <div className="border-b border-slate-800 pb-4 flex flex-wrap items-start justify-between gap-4">
+        <div className="bg-[#111C30] border border-slate-800 rounded-2xl p-4 sm:p-6 space-y-4 sm:space-y-5">
+          <div className="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
             <div className="space-y-1 min-w-0 flex-1">
-              <div className="text-xs font-mono tabular-nums text-cyan-400 font-semibold">
+              <div className="text-[11px] sm:text-xs font-mono tabular-nums text-cyan-400 font-semibold">
                 {activeTopic.code} · Chương trình Vật lý 12 GDPT Mới
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                 {activeTopic.title}
               </h2>
-              <p className="text-sm text-slate-400">{activeTopic.subtitle}</p>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{activeTopic.subtitle}</p>
             </div>
 
             {/* Prev / Next Navigation Buttons */}
-            <div className="flex items-center gap-2 shrink-0">
+            <div className="flex items-center gap-2 shrink-0 self-stretch sm:self-auto justify-between sm:justify-end pt-1 sm:pt-0">
               <button
                 type="button"
                 disabled={activeTopic.id <= 1}
                 onClick={() => setSelectedTopicId((id) => Math.max(1, id - 1))}
-                className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-slate-200 hover:bg-slate-800 disabled:opacity-40 transition-colors whitespace-nowrap shrink-0"
+                className="flex-1 sm:flex-none px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 text-xs font-medium text-slate-200 hover:bg-slate-800 disabled:opacity-40 transition-colors text-center"
               >
                 ← Chủ đề trước
               </button>
@@ -184,7 +184,7 @@ export const TheoryHandbook: React.FC = () => {
                 type="button"
                 disabled={activeTopic.id >= 12}
                 onClick={() => setSelectedTopicId((id) => Math.min(12, id + 1))}
-                className="px-3 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-xs font-semibold text-white disabled:opacity-40 transition-colors whitespace-nowrap shrink-0"
+                className="flex-1 sm:flex-none px-3.5 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-xs font-semibold text-white disabled:opacity-40 transition-colors text-center"
               >
                 Chủ đề tiếp →
               </button>
