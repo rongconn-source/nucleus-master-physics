@@ -471,9 +471,10 @@ export const ExamBank2025: React.FC = () => {
                   </div>
 
                   <div className="space-y-3">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 sm:gap-3">
                       <input
                         type="text"
+                        inputMode="decimal"
                         value={userVal}
                         onChange={(e) =>
                           setPart3Answers((prev) => ({
@@ -481,8 +482,8 @@ export const ExamBank2025: React.FC = () => {
                             [q.id]: e.target.value,
                           }))
                         }
-                        placeholder="Nhập đáp số (VD: 8,36)"
-                        className="flex-1 px-3.5 py-2 rounded-xl bg-[#090F1D] border border-slate-700 font-mono text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-400 tabular-nums"
+                        placeholder="Nhập số (VD: 8,36)"
+                        className="flex-1 px-3 sm:px-3.5 py-2 rounded-xl bg-[#090F1D] border border-slate-700 font-mono text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-400 tabular-nums"
                       />
                       <span className="text-xs font-mono text-slate-400 shrink-0">
                         ({q.unit})

@@ -40,10 +40,10 @@ interface DraggedNucleon {
 }
 
 function getBucketLayout(width: number, height: number) {
-  const bucketY = height - 42;
-  const bucketH = 50;
-  const bucketW = Math.min(204, Math.max(142, (width - 48) * 0.44));
-  const gap = Math.min(36, Math.max(14, width * 0.05));
+  const bucketY = height - 40;
+  const bucketH = 48;
+  const bucketW = Math.min(204, Math.max(122, (width - 32) * 0.46));
+  const gap = Math.min(32, Math.max(10, width * 0.04));
   const pBucketX = width / 2 - gap / 2 - bucketW / 2;
   const nBucketX = width / 2 + gap / 2 + bucketW / 2;
   return { bucketY, bucketW, bucketH, pBucketX, nBucketX };
@@ -553,12 +553,16 @@ export const NucleusBuilderLab: React.FC = () => {
         ctx.fillText(labelText, startX + spheresWidth + gapBetween, bucketY + 0.5);
       };
 
+      const isCompact = bucketW < 148;
+      const pLabel = isCompact ? 'Kéo p⁺' : 'Kéo Proton (p⁺)';
+      const nLabel = isCompact ? 'Kéo n⁰' : 'Kéo Neutron (n⁰)';
+
       drawBucket(
         pBucketX,
         'rgba(244, 63, 94, 0.45)',
         '#F43F5E',
         '#FECDD3',
-        'Kéo Proton (p⁺)'
+        pLabel
       );
 
       drawBucket(
@@ -566,7 +570,7 @@ export const NucleusBuilderLab: React.FC = () => {
         'rgba(56, 189, 248, 0.45)',
         '#0284C7',
         '#BAE6FD',
-        'Kéo Neutron (n⁰)'
+        nLabel
       );
 
       // Draw currently dragged nucleon
@@ -598,6 +602,9 @@ export const NucleusBuilderLab: React.FC = () => {
   const handlePointerDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    if (e.cancelable) {
+      e.preventDefault();
+    }
     const rect = canvas.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -845,30 +852,30 @@ export const NucleusBuilderLab: React.FC = () => {
             </div>
 
             {/* Radioactive Decay Trigger Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-800/80">
-              <span className="text-xs font-medium text-slate-300 flex items-center gap-1.5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 border-t border-slate-800/80">
+              <span className="text-xs font-medium text-slate-300 flex items-center gap-1.5 shrink-0">
                 <Zap className="w-4 h-4 text-amber-400 shrink-0" />
-                Kích hoạt phân rã phóng xạ:
+                <span>Kích hoạt phân rã:</span>
               </span>
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 w-full sm:w-auto">
                 <button
                   type="button"
                   onClick={triggerAlphaDecay}
-                  className="px-3 py-2 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 text-amber-300 text-xs font-semibold transition-colors whitespace-nowrap shrink-0"
+                  className="px-2.5 sm:px-3 py-2 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 text-amber-300 text-xs font-semibold transition-colors text-center truncate"
                 >
                   Phóng xạ α (⁴₂He)
                 </button>
                 <button
                   type="button"
                   onClick={triggerBetaMinusDecay}
-                  className="px-3 py-2 rounded-lg bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/40 text-cyan-300 text-xs font-semibold transition-colors whitespace-nowrap shrink-0"
+                  className="px-2.5 sm:px-3 py-2 rounded-lg bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/40 text-cyan-300 text-xs font-semibold transition-colors text-center truncate"
                 >
                   Phóng xạ β⁻ (e⁻)
                 </button>
                 <button
                   type="button"
                   onClick={triggerBetaPlusDecay}
-                  className="px-3 py-2 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 text-xs font-semibold transition-colors whitespace-nowrap shrink-0"
+                  className="px-2.5 sm:px-3 py-2 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 text-xs font-semibold transition-colors text-center truncate"
                 >
                   Phóng xạ β⁺ (e⁺)
                 </button>
@@ -880,7 +887,7 @@ export const NucleusBuilderLab: React.FC = () => {
                     setLastDecayEquation(null);
                     setDecayNotice(null);
                   }}
-                  className="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium flex items-center gap-1 transition-colors whitespace-nowrap shrink-0"
+                  className="px-2.5 sm:px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium flex items-center justify-center gap-1 transition-colors text-center truncate"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                   Đặt về ¹²C

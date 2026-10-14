@@ -179,8 +179,8 @@ export const NuclearCalculator: React.FC = () => {
           </p>
         </div>
 
-        {/* 6 Mode Tabs */}
-        <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#090F1D] border border-slate-800 rounded-xl max-w-full overflow-x-auto">
+        {/* 6 Mode Tabs (Touch horizontal scroll on mobile & tablet) */}
+        <div className="flex items-center gap-1.5 p-1 bg-[#090F1D] border border-slate-800 rounded-xl max-w-full overflow-x-auto no-scrollbar">
           <button
             type="button"
             onClick={() => setActiveMode('binding')}
